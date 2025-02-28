@@ -1,89 +1,891 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.4.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.4.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.4.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+<!-- saved from url=(0024)https://www.jwdesign.nu/ -->
+<html lang="en" class="csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>JW-design</title>
+	<!-- core CSS -->
+    <link href="./JW-design_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./JW-design_files/font-awesome.min.css" rel="stylesheet">
+    <link href="./JW-design_files/animate.min.css" rel="stylesheet">
+    <link href="./JW-design_files/owl.carousel.css" rel="stylesheet">
+    <link href="./JW-design_files/owl.transitions.css" rel="stylesheet">
+    <link href="./JW-design_files/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+      <style>
+      #main-slider .item {
+       height: 400px; !important;
       }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcomejwdesigngittest22</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+        
+        
+      #Logotyper {padding: 100px 0 1px;}#Etiketter {padding: 100px 0 1px;}      .content_image_border {
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          padding: 5px
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
         }
-      });
+    
+    </style>
+  
+<script type="text/javascript" charset="UTF-8" src="./JW-design_files/common.js.nedladdning"></script><script type="text/javascript" charset="UTF-8" src="./JW-design_files/util.js.nedladdning"></script></head><!--/head-->
+
+<body id="home" class="homepage" style="">
+
+    <header id="header">
+        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top top-nav-collapse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+<a class="navbar-brand" href="https://www.jwdesign.nu/index.php?company_id=231"><img src="./JW-design_files/Jwdesign22.png" alt="" height="70"></a>               
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="scroll active"><a href="https://www.jwdesign.nu/#home">Hem </a></li>
+                      <li class="scroll"><a href="https://www.jwdesign.nu/#Logotyper">Logotyper</a></li><li class="scroll"><a href="https://www.jwdesign.nu/#Etiketter">Etiketter</a></li>                      
+                      <!--
+                        <li class="scroll"><a href="#portfolio">Portfolio</a></li>
+                        
+                        <li class="scroll"><a href="#pricing">Price</a></li>
+                        <li class="scroll"><a href="#blog">  Blog </a></li>
+                        <li class="scroll"><a href="#testimonial"> Testimonial </a></li>
+                        -->
+                      <li class="scroll"><a href="https://www.jwdesign.nu/#get-in-touch">Kontakt</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
+
+  
+    
+  
+  
+    <section id="main-slider">
+        
+          <div class="owl-carousel2">             <!--<div class="itestyle="background-image: url(https://hubnet.nu/add/assets/upload/morgonfika11.jpg);">
+                <div class="slider-innm" er">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <div class="carousel-content">
+                                    <h2></h2>
+                                    <p><br></p>
+                                    <a class="btn btn-primary btn-lg" href="#">läs mer >></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>--><!--/.item-->
+  
+            
+        </div><!--/.owl-carousel-->
+    </section><!--/#main-slider-->
+           
+<section id="Logotyper">            
+<div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"> Logotyper</h2>
+                <p class="text-center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;"> </p>
+            </div>
+              <div class="row">
+                <div class="features">
+                            <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Alla_loggor_hemsida.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Alla_loggor_hemsida.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Pettersons-lantbruk-hemsida.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Pettersons-lantbruk-hemsida.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Assarebyns_mjol.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Assarebyns_mjol.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Trestads_lyft_bil.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Trestads_lyft_bil.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Logga-Alexanderskolan.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="15" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Logga-Alexanderskolan.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp animated" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: visible; animation-duration: 300ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Illustration-biodling.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="16" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Illustration-biodling.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/hubnet-Umea_1.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="17" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/hubnet-Umea_1.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/logga-Mariannes-biodling-2016.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="18" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/logga-Mariannes-biodling-2016.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Holmen_logga1.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="19" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Holmen_logga1.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Emils-tragubbar-8001.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="110" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Emils-tragubbar-8001.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Dalslands-sodra-biodlarforening-logotyp.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="111" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Dalslands-sodra-biodlarforening-logotyp.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Logga-IMP.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="112" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Logga-IMP.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Health-care-1.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="113" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Health-care-1.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Daniels.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="114" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Daniels.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Odeborg-buss-800.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="115" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Odeborg-buss-800.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/together.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="116" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/together.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/D_2.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="117" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/D_2.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/munchen-opera-house.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="118" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/munchen-opera-house.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/dig-FK.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="119" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/dig-FK.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/bibliotek-1.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="120" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/bibliotek-1.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Who-made-the-pyramids-800.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="121" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Who-made-the-pyramids-800.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                               
+                 </div>
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#services-->
+
+<section id="Etiketter">            
+<div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown" style="visibility: hidden; animation-name: none;"> Etiketter</h2>
+                <p class="text-center wow fadeInDown" style="visibility: hidden; animation-name: none;">Etiketter </p>
+            </div>
+              <div class="row">
+                <div class="features">
+                            <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Mariannes-biodling-etikett.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="222" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Mariannes-biodling-etikett.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/assareby-kvarn_etikettpng1.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="223" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/assareby-kvarn_etikettpng1.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Mariannes-rapsolja.png" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="224" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Mariannes-rapsolja.png" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                          <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms" style="visibility: hidden; animation-duration: 300ms; animation-delay: 100ms; animation-name: none;">
+                          <div class="media service-box">
+                              <div class="entry-thumbnail"><img src="./JW-design_files/Hannas-fargard.jpg" class="content_image content_image_border" alt="">                               </div>
+                              <div class="media-body">
+                                  <h4 class="media-heading">  </h4>
+                                  <p>  
+                                <!-- Modal -->
+                                                   
+                              
+                              </p></div>
+                          </div>
+                      </div><!--/.col-md-4-->
+                    <div class="modal fade" id="225" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">  </h4>
+                                          </div>
+                                         <div class="entry-thumbnail"><img src="./JW-design_files/Hannas-fargard.jpg" class="intro_image" alt="">                                         </div>
+                                          <div class="modal-body">
+                                                                                      </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                               
+                 </div>
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#services-->
+
+  
+               <section id="get-in-touch">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown" style="visibility: hidden; animation-name: none;">Kontakta oss</h2>
+                <p class="text-center wow fadeInDown" style="visibility: hidden; animation-name: none;">  
+</p>
+            </div>
+            
+            <div class="row">
+            <div class="col-sm-6">
+            <div class="address">
+            <h4>Postadress</h4>
+            <p> Karolinervägen 44B, 46450 Dals Rostock </p>
+            </div>
+            
+            <div class="address">
+            <h4>Telefon </h4>
+            <p> +46(0)70-682 66 25 </p>
+            </div>
+            
+            <div class="address">
+            <h4>Epost</h4>
+            <p><a href="https://www.jwdesign.nu/#"> Hej! 
+<br> 
+Mitt namn är Josef Westman, jag gör logotyper, etiketter med mera på beställning. Hör gärna av dig så tänker vi tillsammans ut vad som passar just Din verksamhet!
+<br> 
+<br> 
+Kontakta mig på: 
+josefwestman@gmail.com
+ </a></p>
+            </div>
+              
+            <div class="address">
+            <h4>Besök oss </h4>
+            <p>  </p>
+            </div> 
+            
+            <div class="address">
+            <h4>Följ oss</h4>
+            <p><a target="_blank" href="https://www.jwdesign.nu/"><i class="fa fa-facebook"></i></a>  &nbsp; <a href="https://www.jwdesign.nu/#"><i class="fa fa-twitter"></i></a> &nbsp; <a href="https://www.jwdesign.nu/#"><i class="fa fa-google-plus"></i></a></p>
+            </div>
+            </div>
+            
+            <div class="col-sm-6">
+              <img src="./JW-design_files/Josef.png" alt="" class="intro_image content_image_border">            
+                   
+            
+            <!--  
+            <form action="#" method="post" name="contact-form" id="main-contact-form">
+                                <div class="form-group">
+                                    <input type="text" required placeholder="Name" class="form-control" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" required placeholder="Email" class="form-control" name="email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" required placeholder="Subject" class="form-control" name="subject">
+                                </div>
+                                <div class="form-group">
+                                    <textarea required placeholder="Message" rows="8" class="form-control" name="message"></textarea>
+                                </div>
+                                <button class="btn btn-primary" type="submit">SUBMIT</button>
+                            </form> -->
+            </div>
+            
+            
+            </div>
+            
+            
+        </div>
+    </section><!--/#get-in-touch-->
+
+
+
+    <footer id="footer">
+        <div class="container text-center">
+          <a href="http://hubnet.se/" target="_new">Powered by www.hubnet.se</a>
+         <!-- All rights reserved © 2016 | <a href=""></a> from <a href="">/a>-->
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="./JW-design_files/jquery.js.nedladdning"></script>
+    <script src="./JW-design_files/bootstrap.min.js.nedladdning"></script>
+    <script src="./JW-design_files/js"></script>
+    <script src="./JW-design_files/owl.carousel.min.js.nedladdning"></script>
+    <script src="./JW-design_files/mousescroll.js.nedladdning"></script>
+    <script src="./JW-design_files/smoothscroll.js.nedladdning"></script>
+    <script src="./JW-design_files/jquery.prettyPhoto.js.nedladdning"></script>
+    <script src="./JW-design_files/jquery.isotope.min.js.nedladdning"></script>
+    <script src="./JW-design_files/jquery.inview.min.js.nedladdning"></script>
+    <script src="./JW-design_files/wow.min.js.nedladdning"></script>
+    <script src="./JW-design_files/main.js.nedladdning"></script>
+	<script src="./JW-design_files/scrolling-nav.js.nedladdning"></script>
+<script>
+
+    $(document).ready(function($) {
+      $("#owl-example").owlCarousel();
+    });
+
+    $("body").data("page", "frontpage");
+
+$("#owl-example").owlCarousel({ 
+        items:3,   
+/*        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [980,9],
+        itemsTablet: [768,5],
+        itemsTabletSmall: false,
+        itemsMobile : [479,4]*/
+})
+
     </script>
-  </body>
-</html>
+
+ 
+</body></html>
